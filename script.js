@@ -3,6 +3,7 @@ const themeToggler = document.querySelector(".theme-toggler");
 
 themeToggler.addEventListener('click', () => {
       document.body.classList.toggle('light-theme-variables');
+	document.body.style.transition = 'all 500ms ease';
       themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
       themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
 })
@@ -65,7 +66,7 @@ function searchMessage() {
       })
 }
 
-messageSearch.addEventListener('keyup' , searchMessage);
+messageSearch.addEventListener('keyup', searchMessage);
 
 
 // Search bar of influencers
@@ -73,12 +74,12 @@ const searchBar = document.querySelector('#search-influencers');
 const influencers = document.querySelector('#influencers');
 const mainBody = document.querySelector('.main-body');
 const influence = document.querySelector('#influence-para');
-const influencer =document.querySelectorAll('.influencer');
-const artist =document.querySelector('#artist');
+const influencer = document.querySelectorAll('.influencer');
+const artist = document.querySelector('#artist');
 
-searchBar.addEventListener('click' , () => {
-            influencers.style.display = 'grid';
-            mainBody.classList.add('active');
+searchBar.addEventListener('click', () => {
+      influencers.style.display = 'grid';
+      mainBody.classList.add('active');
 })
 
 const closeSearch = (e) => {
@@ -88,7 +89,7 @@ const closeSearch = (e) => {
       }
 }
 
-mainBody.addEventListener('click' , closeSearch);
+mainBody.addEventListener('click', closeSearch);
 
 
 // Search influencers from search bar
@@ -108,4 +109,4 @@ function searchInfluencer() {
       })
 }
 
-searchBar.addEventListener('keyup' , searchInfluencer);
+searchBar.addEventListener('keyup', searchInfluencer);
