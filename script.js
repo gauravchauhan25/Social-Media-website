@@ -8,6 +8,23 @@ themeToggler.addEventListener('click', () => {
       themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
 })
 
+// For instagarm scroller
+    document.addEventListener('DOMContentLoaded', function() {
+        const scroller = document.querySelector('.stories');
+        let scrollAmount = 0;
+
+        scroller.addEventListener('scroll', () => {
+            if (scrollAmount >= scroller.scrollWidth - scroller.clientWidth) {
+                scrollAmount = 0; // Reset to the beginning
+            } else {
+                scrollAmount += 2; // Adjust scroll speed
+            }
+            scroller.scrollLeft = scrollAmount;
+        }
+
+        
+    )}
+
 // For changing active status of sidebar and showing notification popup
 const menuItems = document.querySelectorAll('.menu-item');
 

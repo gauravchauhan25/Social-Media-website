@@ -25,7 +25,7 @@
 
 .light-theme-variables {
       --color-background: #f0eded;
-      
+
       --color-white: rgb(247, 247, 247);
       --color-light: hsl(0, 0%, 93%);
       --color-secondary: hsl(252, 100%, 90%);
@@ -322,25 +322,22 @@ main .container .left .profile {
 /* ----------------Middle------------------------- */
 .middle .stories {
       display: flex;
-      /* display: none; */
-      justify-content: space-between;
-      height: 9rem;
+      justify-content: space-evenly;
+      height: 7rem;
+      width: 40rem;
       gap: 0.5rem;
-      cursor: pointer;
+      overflow-x: auto;
+      white-space: nowrap;
+      overflow-x: scroll;
 }
 
 .middle .stories .story {
-      padding: var(--card-padding);
-      border-radius: var(--card-border-radius);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      font-size: 0.75rem;
-      width: 100%;
+      display: inline-block;
       position: relative;
-      overflow: hidden;
+      height: 4rem;
+      width: 10rem; 
+      cursor: pointer;
+      margin-right: 10px;
 }
 
 .middle .stories .story::before {
@@ -348,46 +345,26 @@ main .container .left .profile {
       display: block;
       width: 100%;
       height: 5rem;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
       position: absolute;
       bottom: 0;
 }
 
 .middle .stories .story .name {
+      width: 0.1rem;
+      font-size: 0.6rem;
+      margin-top: 5px;;
+      text-align: center;
       z-index: 2;
 }
 
-.middle .stories .story:nth-child(1) {
-      background: url('img/dubai.jpeg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(2) {
-      background: url('img/chris-hemsworth.jpeg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(3) {
-      background: url('img/rosamund-pike-story.jpeg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(4) {
-      background: url('img/chris-evans.jpg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(5) {
-      background: url('img/messi.jpeg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(6) {
-      background: url('img/newyork.jpeg') no-repeat center center/cover;
-}
 
 .middle .story .profile-photo {
-      width: 2.2rem;
-      height: 2.2rem;
+      width: 4rem;
+      height: 4rem;
       align-self: start;
+      object-fit: cover;
       border: 3px solid var(--color-primary);
 }
-
 
 /* ------------------Create post-------------------- */
 .middle .create-post {
@@ -804,7 +781,7 @@ main .container .right {
             display: block;
       }
 
-      .left .notification-popup .notification-body p{
+      .left .notification-popup .notification-body p {
             font-size: 1.1rem;
       }
 
@@ -838,19 +815,19 @@ main .container .right {
             font-size: 0.85rem;
       }
 
-      .middle .feed .action-button .interaction-buttons span{
+      .middle .feed .action-button .interaction-buttons span {
             margin-top: 0.4rem;
             margin-bottom: 0.4rem;
             font-size: 2.4rem;
       }
 
-      .middle .feed .action-button .interaction-buttons span i{
+      .middle .feed .action-button .interaction-buttons span i {
             margin-top: 0.4rem;
             margin-bottom: 0.4rem;
             font-size: 2.3rem;
       }
 
-      .middle .feed .action-button .bookmark span i{
+      .middle .feed .action-button .bookmark span i {
             font-size: 2.3rem;
       }
 }
