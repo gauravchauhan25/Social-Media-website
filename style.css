@@ -17,7 +17,7 @@
       --card-border-radius: 1rem;
       --btn-padding: 0.65rem 1.7rem;
       --search-padding: 0.6rem 1rem;
-      --card-padding: 1rem;
+      --card-padding: 1.3rem;
 
       --sticky-top-left: 5.3rem;
       --sticky-top-right: 5.3rem;
@@ -25,7 +25,7 @@
 
 .light-theme-variables {
       --color-background: #f0eded;
-      
+
       --color-white: rgb(247, 247, 247);
       --color-light: hsl(0, 0%, 93%);
       --color-secondary: hsl(252, 100%, 90%);
@@ -57,8 +57,13 @@ body {
       margin: 0 auto;
 }
 
+.logo {
+      font-size: 1.3rem;
+}
+
 .profile-photo {
-      width: 3rem;
+      width: 2.7rem;
+      height: 2.7rem;
       aspect-ratio: 1/1;
       border-radius: 50%;
       overflow: hidden;
@@ -75,7 +80,7 @@ img {
       padding: var(--btn-padding);
       font-weight: 500;
       border-radius: var(--border-radius);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
 }
 
 .btn:hover {
@@ -105,7 +110,7 @@ nav {
       padding: 0.65rem 0;
       position: fixed;
       top: 0;
-      z-index: 10;
+      z-index: 100;
       box-shadow: 0 0 1rem var(--color-primary-variant);
 }
 
@@ -125,7 +130,7 @@ nav .container {
       background: transparent;
       width: 40vw;
       margin-left: 1rem;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--color-dark);
 }
 
@@ -159,6 +164,17 @@ nav .container {
       color: white;
       border-radius: var(--border-radius);
 }
+
+/* .profile-container {
+      position: fixed;
+      top: 5rem;
+      left: 85%;
+      background: var(--color-white);
+      padding: var(--card-padding);
+      border-radius: var(--card-border-radius);
+      z-index: 99;
+} */
+
 
 
 /* ----------------------MAIN---------------------------------- */
@@ -319,28 +335,36 @@ main .container .left .profile {
       display: block;
 }
 
+.left .notification-popup .notification-body p {
+      font-size: 0.85rem;
+}
+
+
 /* ----------------Middle------------------------- */
 .middle .stories {
       display: flex;
-      /* display: none; */
-      justify-content: space-between;
-      height: 9rem;
+      justify-content: space-evenly;
+      height: 6rem;
+      width: 32rem;
       gap: 0.5rem;
-      cursor: pointer;
+      overflow-x: auto;
+      white-space: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+}
+
+.middle .stories::-webkit-scrollbar {
+      display: none;
+      /* Hides scrollbar */
 }
 
 .middle .stories .story {
-      padding: var(--card-padding);
-      border-radius: var(--card-border-radius);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      font-size: 0.75rem;
-      width: 100%;
+      display: inline-block;
       position: relative;
-      overflow: hidden;
+      height: 4rem;
+      width: auto;
+      cursor: pointer;
+      margin-right: 1rem;
 }
 
 .middle .stories .story::before {
@@ -348,46 +372,27 @@ main .container .left .profile {
       display: block;
       width: 100%;
       height: 5rem;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
       position: absolute;
       bottom: 0;
 }
 
 .middle .stories .story .name {
+      width: 2rem;
+      font-size: 0.6rem;
+      margin-top: 5px;
+      ;
+      text-align: center;
       z-index: 2;
 }
 
-.middle .stories .story:nth-child(1) {
-      background: url('img/dubai.jpeg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(2) {
-      background: url('img/chris-hemsworth.jpeg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(3) {
-      background: url('img/rosamund-pike-story.jpeg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(4) {
-      background: url('img/chris-evans.jpg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(5) {
-      background: url('img/messi.jpeg') no-repeat center center/cover;
-}
-
-.middle .stories .story:nth-child(6) {
-      background: url('img/newyork.jpeg') no-repeat center center/cover;
-}
 
 .middle .story .profile-photo {
-      width: 2.2rem;
-      height: 2.2rem;
+      width: 4rem;
+      height: 4rem;
       align-self: start;
+      object-fit: cover;
       border: 3px solid var(--color-primary);
 }
-
 
 /* ------------------Create post-------------------- */
 .middle .create-post {
@@ -398,21 +403,59 @@ main .container .left .profile {
       justify-content: space-between;
       margin-top: 1rem;
       background: var(--color-white);
-      padding: 0.5rem var(--card-padding);
+      padding: 0.2rem var(--card-padding);
       border-radius: var(--border-radius);
       box-shadow: 0 0 0.2rem var(--color-primary-variant);
+}
 
+.middle .create-post .profile-photo {
+      width: 3.2rem;
+      height: auto;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
 }
 
 .middle .create-post input[type="text"] {
       justify-self: start;
       width: 100%;
-      padding-left: 1.2rem;
+      padding: 0.8rem;
       background: transparent;
       color: var(--color-dark);
       margin-right: 1rem;
-      font-size: 1rem;
+      font-size: 0.8rem;
 }
+
+
+/* Scrollers */
+.scroll-button {
+      background-color: var(--color-primary-variant);
+      color: white;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+}
+
+.scroll-button:hover {
+      background-color: #282531;
+}
+
+.scroll-button.left {
+      left: 0;
+}
+
+.scroll-button.right {
+      right: 0;
+}
+
+
 
 /* -------------Feeds------------------------- */
 .middle .feeds .feed {
@@ -438,12 +481,13 @@ main .container .left .profile {
 }
 
 .feed .head .ingo h3 {
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       line-height: 1rem
 }
 
 .middle .feeds .feed .head .ingo small {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
+      color: var(--color-gray);
 }
 
 .middle .feed .photo {
@@ -457,7 +501,7 @@ main .container .left .profile {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 1.4rem;
+      font-size: 0.7rem;
       margin: 0.6rem;
 }
 
@@ -473,7 +517,7 @@ main .container .left .profile {
 }
 
 .middle .bookmark span {
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       cursor: pointer;
 }
 
@@ -497,16 +541,16 @@ main .container .left .profile {
 
 .middle .liked-by p {
       margin-left: 0.5rem;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
 }
 
 .middle .caption p {
-      font-size: 1rem;
+      font-size: 0.85rem;
       margin-bottom: 0.6rem;
 }
 
 .middle .caption b {
-      font-size: 1rem;
+      font-size: 0.9rem;
 }
 
 .middle .caption b:hover {
@@ -516,7 +560,7 @@ main .container .left .profile {
 
 .middle .comments a {
       color: var(--color-gray);
-      font-size: 1.1rem;
+      font-size: 0.9rem;
 }
 
 .middle .comments a:hover {
@@ -542,7 +586,7 @@ main .container .right {
       border-radius: var(--card-border-radius);
       padding: var(--card-padding);
       box-shadow: 0 0 1rem var(--color-primary-variant);
-      /* display: none; */
+      display: none;
 }
 
 .right .messages .heading {
@@ -553,12 +597,16 @@ main .container .right {
 }
 
 .right .messages i {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
 }
 
 .right .messages .search-bar {
       display: flex;
       margin-bottom: 1rem;
+}
+
+.right .messages .search-bar input {
+      font-size: 0.8rem;
 }
 
 .right .messages .category {
@@ -592,17 +640,18 @@ main .container .right {
 }
 
 .right .messages .message h5 {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 500;
 }
 
 .right .messages .message p {
-      font-weight: 700;
+      font-size: 0.7rem;
+      color: var(--color-gray);
 }
 
 .right .message .profile-photo {
       position: relative;
-      overflow: visible;
+      /* overflow: visible; */
 }
 
 .right .profile-photo img {
@@ -619,8 +668,8 @@ main .container .right {
 }
 
 .right .messages .message .profile-photo .active {
-      width: 0.8rem;
-      height: 0.8rem;
+      width: 0.9rem;
+      height: 0.9rem;
       border-radius: 50%;
       border: 3px solid var(--color-white);
       background: var(--color-success);
@@ -636,10 +685,10 @@ main .container .right {
       display: none;
 }
 
-.right .friend-requests h5 {
-      color: var(--color-gray);
+.right .friend-requests .info h5 {
+      color: var(--color-dark);
       margin: 0.5rem 0;
-      font-size: 1rem;
+      font-size: 0.85rem;
 }
 
 .right .request {
@@ -653,7 +702,7 @@ main .container .right {
 .right .request .info {
       display: flex;
       gap: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
 }
 
 .right .request .action {
@@ -723,14 +772,41 @@ main .container .right {
       transform: rotate(45deg);
 }
 
+/* Footer */
+footer {
+      background: var(--color-white);
+      padding: 1rem;
+      box-shadow: var(--box-shadow);
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      z-index: 100;
+      width: 100%;
+      display: none;
+}
 
-@media screen and (max-width: 1200px) {
+footer .menu-item a  {
+      display: flex;
+}
+
+.menu-item span i {
+      align-items: center;
+      justify-content: center;
+      margin: 0 1.2rem;
+}
+
+.menu-item h3 {
+      display: none;
+}
+
+
+@media screen and (max-width: 980px) {
       .container {
             width: 96%;
       }
 
       main .container {
-            grid-template-columns: 5rem auto 30vw;
+            grid-template-columns: 5rem auto 0;
             gap: 1rem;
       }
 
@@ -740,7 +816,6 @@ main .container .right {
       }
 
       .left {
-            width: 5rem;
             z-index: 5;
       }
 
@@ -752,8 +827,10 @@ main .container .right {
             font-size: 1.5rem;
       }
 
-      main .container .left .profile {
-            display: none;
+      .middle .stories {
+            margin: 0 auto;
+            height: 7rem;
+            width: 38rem;
       }
 
       .left .sidebar h3 {
@@ -769,27 +846,39 @@ main .container .right {
       }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 700px) {
       nav .search-bar {
             display: none;
       }
 
       nav {
-            padding: 0.7rem 0;
+            padding: 1.2rem 0.5rem;
+      }
+
+      nav .create {
+            display: none;
       }
 
       main .container {
-            grid-template-columns: 0 auto 5rem;
+            grid-template-columns: 0 auto 0;
             gap: 0;
       }
 
-      main .container .left {
-            grid-column: 3/4;
-            position: fixed;
-            bottom: 0;
-            right: 0;
+      .middle .stories {
+            margin: 0 1rem;
+            height: 6rem;
+            width: 30rem;
       }
 
+      .middle .stories  .story {
+            margin: 0 0.4rem;
+      }
+
+      .middle .stories .scroll-button {
+            display: none;
+      }
+
+      
       .left .notification-popup {
             position: absolute;
             left: -22.5rem;
@@ -804,18 +893,30 @@ main .container .right {
             display: block;
       }
 
-      .left .notification-popup .notification-body p{
+      .left .notification-popup .notification-body p {
             font-size: 1.1rem;
       }
 
       main .container .middle {
             grid-column: 1/3;
+            width: 100%;
       }
-
+      main .container .left {
+            display: none;
+      }
+      
       main .container .right {
             display: none;
       }
+      
+      footer {
+            display: block;
+      }
 
+      footer .menu-item span i{
+            font-size: 1rem;
+      }
+      
       .theme-toggler {
             position: absolute;
             right: 6rem;
@@ -828,29 +929,15 @@ main .container .right {
       .search-influencers {
             display: none;
       }
+}
 
-      .feed .head .ingo h3 {
-            font-size: 1.3rem;
-            line-height: 1.5rem
+@media screen  and (max-width: 500px) {
+      .middle .stories {
+            height: 6rem;
+            width: 25rem;
       }
 
-      .middle .feeds .feed .head .ingo small {
+      footer .menu-item span i{
             font-size: 0.85rem;
-      }
-
-      .middle .feed .action-button .interaction-buttons span{
-            margin-top: 0.4rem;
-            margin-bottom: 0.4rem;
-            font-size: 2.4rem;
-      }
-
-      .middle .feed .action-button .interaction-buttons span i{
-            margin-top: 0.4rem;
-            margin-bottom: 0.4rem;
-            font-size: 2.3rem;
-      }
-
-      .middle .feed .action-button .bookmark span i{
-            font-size: 2.3rem;
       }
 }

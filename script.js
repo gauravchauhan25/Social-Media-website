@@ -3,10 +3,52 @@ const themeToggler = document.querySelector(".theme-toggler");
 
 themeToggler.addEventListener('click', () => {
       document.body.classList.toggle('light-theme-variables');
-	document.body.style.transition = 'all 500ms ease';
+      document.body.style.transition = 'all 500ms ease';
       themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
       themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+      const storyContainer = document.querySelector('.stories');
+      const scrollLeftButton = document.getElementById('scroll-left');
+      const scrollRightButton = document.getElementById('scroll-right');
+
+      scrollLeftButton.style.display = 'none';
+
+      // Scroll left function
+      scrollLeftButton.addEventListener('click', function () {
+            storyContainer.scrollBy({
+                  left: -200,
+                  behavior: 'smooth'
+            });
+      });
+
+      // Scroll right function
+      scrollRightButton.addEventListener('click', function () {
+            storyContainer.scrollBy({
+                  left: 200,
+                  behavior: 'smooth'
+            });
+      });
+
+      function updateButtonVisibility() {
+            
+            if (storyContainer.scrollLeft === 0) {
+                  scrollLeftButton.style.display = 'none';
+            } else {
+                  scrollLeftButton.style.display = 'block';
+            }
+
+            if (storyContainer.scrollLeft + storyContainer.clientWidth >= storyContainer.scrollWidth) {
+                  scrollRightButton.style.display = 'none';
+            } else {
+                  scrollRightButton.style.display = 'block';
+            }
+      }
+
+      storyContainer.addEventListener('scroll', updateButtonVisibility);
+});
+
 
 // For changing active status of sidebar and showing notification popup
 const menuItems = document.querySelectorAll('.menu-item');
@@ -37,7 +79,7 @@ menuItems.forEach(item => {
                   document.querySelector('#friend-requests').style.display = 'block';
             }
 
-            if (item.id != 'messages-notifications' && item.id != 'home') {
+            if (item.id != 'messages-notifications') {
                   document.querySelector('#messages').style.display = 'none';
             }
             else {
