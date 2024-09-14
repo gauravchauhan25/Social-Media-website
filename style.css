@@ -428,6 +428,9 @@ main .container .left .profile {
 
 
 /* Scrollers */
+.middle .stories button span {
+      font-size: 0.7rem;
+}
 .scroll-button {
       background-color: var(--color-primary-variant);
       color: white;
