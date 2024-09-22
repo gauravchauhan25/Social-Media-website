@@ -1,4 +1,4 @@
-<h1>Social Media Website</h1>
+<h1>Snapgram - Social Media Website</h1>
 
 <h3>Description</h3>
 <p>This is a social media website created using HTML, CSS and JavaScript. </p>
