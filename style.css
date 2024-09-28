@@ -7,7 +7,7 @@
 
       --color-success: hsl(120, 95%, 65%);
       --color-danger: hsl(0, 97%, 55%);
-      --color-gray: hsl(252, 15%, 68%);
+      --color-gray: hsl(0, 0%, 53%);
       --color-primary: hsl(252, 67%, 51%);
       --color-light: rgba(27, 24, 24, 0.4);
       --box-shadow: 0 4rem 4rem var(--color-primary-variant);
@@ -185,7 +185,7 @@ main {
 
 main .container {
       display: grid;
-      grid-template-columns: 15vw auto 22vw;
+      grid-template-columns: 15vw auto 25vw;
       column-gap: 2rem;
       position: relative;
 }
@@ -578,6 +578,47 @@ main .container .right {
       top: var(--sticky-top-right);
       bottom: 0;
       border-radius: var(--card-border-radius);
+}
+
+.suggestions-container {
+      height: auto;
+      width: auto;
+      /* background-color: var(--color-white); */
+      color: var(--color-dark);
+      padding: var(--card-padding);
+      border-radius: var(--border-radius);
+}
+
+.suggestions-container .profile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      margin-right: 1.2rem;
+}
+
+.suggestion-body {
+      line-height: 1.1rem;
+}
+
+.suggestions-container p {
+      font-size: 0.9rem;
+}
+
+.suggestions-container small {
+      font-size: 0.7rem;
+}
+
+.text-purple {
+      font-size: 0.8rem;
+      color: var(--color-primary);
+}
+
+.suggestions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 1.3rem 0;
 }
 
 .right .messages .search-bar i {

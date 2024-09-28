@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
       storyContainer.addEventListener('scroll', updateButtonVisibility);
 });
 
-
 // For changing active status of sidebar and showing notification popup
 const menuItems = document.querySelectorAll('.menu-item');
 
@@ -70,6 +69,13 @@ menuItems.forEach(item => {
             else {
                   document.querySelector('.notification-popup').style.display = 'block';
                   document.querySelector('.notification-count').style.display = 'none';
+            }
+
+            if (item.id != 'home') {
+                  document.querySelector('.suggestions-container').style.display = 'none';
+            }
+            else {
+                  document.querySelector('.suggestions-container').style.display = 'block';
             }
 
             if (item.id != 'requests') {
