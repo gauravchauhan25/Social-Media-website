@@ -28,6 +28,11 @@
                         <input type="search" name="search" placeholder="Search for influencer" id="search-influencers">
                   </div>
 
+		  <div class="create">
+                        <div class="profile-photo">
+                              <img src="img/profile-photo.jpg" alt="">
+                        </div>
+                  </div>
 
                   <div class="theme-toggler">
                         <span class="material-icons-sharp">
@@ -39,11 +44,7 @@
                         </span>
                   </div>
 
-                  <div class="create">
-                        <div class="profile-photo">
-                              <img src="https://i.pinimg.com/564x/d8/8d/41/d88d4171b97b8eba2b1382a09deb7dc8.jpg" alt="">
-                        </div>
-                  </div>
+                  
             </div>
       </nav>
 
@@ -58,7 +59,20 @@
                         <!-- -----------------SIDEBAR----------------- -->
                         <div class="sidebar">
                               <a class="menu-item active" id="home">
-                                    <span><i class="fa-solid fa-house"></i></span>
+                                    <span><i>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="21"
+          height="21"
+          fill="currentColor"
+          class="bi bi-house-fill"
+          viewBox="0 0 16 16"
+        >
+          <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+          <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z" />
+        </svg>
+      </i>
+</span>
                                     <h3>Home</h3>
                               </a>
 
@@ -70,10 +84,21 @@
                               </a>
 
                               <a class="menu-item" id="notifications">
-                                    <span><i><span class="material-symbols-outlined">
-                                                      notifications
-                                                </span><small class="notification-count">9+</small>
-                                          </i></span>
+                                    <span><i>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          fill="currentColor"
+          class="bi bi-bell"
+          viewBox="0 0 20 20"
+          style={{
+            fill: "var(--color-dark)",
+          }}
+        >
+          <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+        </svg>
+      </i></span>
 
                                     <h3>Notifications</h3>
                                     <!-- ------------Notification Popup------------- -->
@@ -125,9 +150,21 @@
                                     </div>
                               </a>
                               <a class="menu-item" id="messages-notifications">
-                                    <span><i><span class="material-symbols-outlined">
-                                                      mail
-                                                </span><small class="notification-count">6</small></i></span>
+                                    <span><i>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="bi bi-messenger"
+          width="25"
+          height="30"
+          viewBox="0 0 20 20"
+          style={{
+            fill: "var(--color-dark)",
+          }}
+        >
+          <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.64.64 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.64.64 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76m5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z" />
+        </svg>
+      <small class="notification-count">6</small></i></span>
                                     <h3>Messages</h3>
                               </a>
 
@@ -145,13 +182,18 @@
                               </a>
                               <a class="menu-item">
                                     <span><i>
-                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25"
-                                                      height="30" viewBox="0 0 50 50" style=" fill: var(--color-dark)">
-                                                      <path
-                                                            d="M13.34 4.13L20.26 16H4v-1C4 9.48 8.05 4.92 13.34 4.13zM33.26 16L22.57 16 15.57 4 26.26 4zM46 15v1H35.57l-7-12H35C41.08 4 46 8.92 46 15zM4 18v17c0 6.08 4.92 11 11 11h20c6.08 0 11-4.92 11-11V18H4zM31 32.19l-7.99 4.54C21.68 37.49 20 36.55 20 35.04v-9.08c0-1.51 1.68-2.45 3.01-1.69L31 28.81C32.33 29.56 32.33 31.44 31 32.19z">
-                                                      </path>
-                                                </svg>
-                                          </i></span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="30"
+          viewBox="0 0 50 50"
+          style=
+            "fill: var(--color-dark)",
+          
+        >
+          <path d="M13.34 4.13L20.26 16H4v-1C4 9.48 8.05 4.92 13.34 4.13zM33.26 16L22.57 16 15.57 4 26.26 4zM46 15v1H35.57l-7-12H35C41.08 4 46 8.92 46 15zM4 18v17c0 6.08 4.92 11 11 11h20c6.08 0 11-4.92 11-11V18H4zM31 32.19l-7.99 4.54C21.68 37.49 20 36.55 20 35.04v-9.08c0-1.51 1.68-2.45 3.01-1.69L31 28.81C32.33 29.56 32.33 31.44 31 32.19z"></path>
+        </svg>
+      </i></span>
                                     <h3>Reels</h3>
                               </a>
                               <a class="menu-item"><span><i><span class="material-symbols-outlined">
@@ -178,7 +220,7 @@
 
                               <div class="story">
                                     <div class="profile-photo">
-                                          <img src="https://i.pinimg.com/564x/d8/8d/41/d88d4171b97b8eba2b1382a09deb7dc8.jpg"
+                                          <img src="img/profile-photo.jpg"
                                                 alt="">
                                     </div>
                                     <p class="name">Your Story</p>
@@ -262,7 +304,7 @@
 
                         <form class="create-post">
                               <div class="profile-photo">
-                                    <img src="https://i.pinimg.com/564x/d8/8d/41/d88d4171b97b8eba2b1382a09deb7dc8.jpg"
+                                    <img src="img/profile-photo.jpg"
                                           alt="">
                               </div>
                               <input type="text" name="name" id="name" placeholder="What's on your mind! Gaurav!">
@@ -609,7 +651,7 @@
                         <div class="suggestions-container">
                               <div class="profile">
                                     <div class="profile-photo">
-                                          <img src="https://i.pinimg.com/564x/d8/8d/41/d88d4171b97b8eba2b1382a09deb7dc8.jpg"
+                                          <img src="img/profile-photo.jpg"
                                                 alt="">
                                     </div>
 

@@ -53,7 +53,7 @@ body {
 }
 
 .container {
-      width: 80%;
+      width: 94%;
       margin: 0 auto;
 }
 
@@ -185,7 +185,7 @@ main {
 
 main .container {
       display: grid;
-      grid-template-columns: 15vw auto 25vw;
+      grid-template-columns: 17vw auto 27vw;
       column-gap: 2rem;
       position: relative;
 }
@@ -270,10 +270,6 @@ main .container .left .profile {
       background: var(--color-light);
 }
 
-.left .sidebar .active i,
-.left .sidebar .active h3 {
-      color: var(--color-primary);
-}
 
 .left .sidebar .active::before {
       content: "";
